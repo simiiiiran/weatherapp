@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather app</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="card">
+<body id="dynbg">
+    <div id="card" class="backdrop-blur-sm shadow-2xl">
         <div class="search">
             <input type="text" placeholder="Enter city name" spellcheck="false">
             <button><img width="20px" src="images/search.png" alt="searchimg"></button>
@@ -16,7 +17,7 @@
             <img src="images/rain.png" alt="ranimg" class="weather_icon">
             <h1 class="temp">22°C</h1>
             <h2 class="city">New Work</h2>
-            <div class="details">
+            <div id="details">
                 <div class="col">
                     <img src="images/humidity.png" alt="humidimg">
                     <div>
