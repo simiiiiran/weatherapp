@@ -10,14 +10,14 @@ async function checkweather(city) {
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
     const data = await response.json();
     console.log("notworking");
-    console.log(data);
+    console.log(data.weather[0].main);
 
     document.querySelector(".city").innerHTML = data.name;
     document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
     document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
     document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
 
-    let bgImageUrl = ""; // Variable to hold the background image URL
+    let bgImageUrl = "./defbag.jpg"; // Variable to hold the background image URL
 
     if (data.weather[0].main == "Clouds") {
         weatherIcon.src = "images/clouds.png";
@@ -25,16 +25,16 @@ async function checkweather(city) {
         console.log("Clouds");
     } else if (data.weather[0].main == "Clear") {
         weatherIcon.src = "images/clear.png";
-        bgImageUrl = "./images/clear_sky.jpg"; // Change this to your clear sky image
+        bgImageUrl = "./images/sunny.jfif"; // Change this to your clear sky image
         console.log("Clear");
     } else if (data.weather[0].main == "Rain") {
         weatherIcon.src = "images/rain.png";
         console.log("Rain");
-        document.querySelector("#dynbg").style.backgroundImage  = "./images/rain3.jpg";
+        bgImageUrl = "./images/rain3.jpg";
     } else if (data.weather[0].main == "Drizzle") {
         weatherIcon.src = "images/drizzle.png";
         console.log("Drizzle");
-        bgImageUrl = "./images/drizzle.jpg"; // Change this to your drizzle image
+        bgImageUrl = "./images/drizzle2.jpg"; // Change this to your drizzle image
     } else if (data.weather[0].main == "Mist") {
         console.log("mist");
         weatherIcon.src = "images/mist.png";

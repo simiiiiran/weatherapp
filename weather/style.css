@@ -6,6 +6,9 @@
 }
 body{
     background-color: black;
+    background-image: url(./images/defbag.jpg);
+    background-size: 100%;
+    z-index: -1;
 }
 #card{
     width: 90%;
